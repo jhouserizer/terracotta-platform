@@ -30,7 +30,7 @@ public abstract class StartupCommandBuilder {
   private String serverName;
   private boolean consistentStartup;
   private Path[] tcConfigs;
-  private final int debugPort = Integer.getInteger("configDebugPort", 0);
+  private int debugPort = Integer.getInteger("serverDebugPortStart", 0);
   private int port;
   private int stripeId;
   private String clusterName;
