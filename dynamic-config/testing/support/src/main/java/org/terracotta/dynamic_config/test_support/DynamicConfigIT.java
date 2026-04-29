@@ -859,7 +859,9 @@ public class DynamicConfigIT {
 
   public static class InlineToolExecutionResult extends ToolExecutionResult implements OutputService {
 
-    private final InMemoryOutputService delegate = new InMemoryOutputService();
+    private static final long serialVersionUID = 1L;
+
+    private final transient InMemoryOutputService delegate = new InMemoryOutputService();
     private int exitStatus = -1;
 
     public InlineToolExecutionResult() {

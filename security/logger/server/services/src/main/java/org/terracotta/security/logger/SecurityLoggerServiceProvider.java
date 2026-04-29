@@ -97,7 +97,7 @@ public class SecurityLoggerServiceProvider implements ServiceProvider {
 
   private Optional<SecurityLogger> findSecurityLogger() {
     Collection<SecurityLogger> loggers = platformConfiguration.getExtendedConfiguration(SecurityLogger.class);
-    if (loggers.size() != 1) {
+    if (loggers.size() > 1) {
       throw new IllegalStateException("Multiple instances found for " + SecurityLogger.class);
     }
     return loggers.stream().findAny();
